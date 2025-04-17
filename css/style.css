@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #6f42c1;
+    --primary-color: #113605;
     --text-light: #ffffff;
     --card-bg: rgba(0, 0, 0, 0.8);
     --primary: #6f42c1;
@@ -13,6 +13,7 @@ body {
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     font-size: x-large;
+
 }
 
 .container {
