@@ -7,6 +7,19 @@
     --light: #ffffff;
 }
 
+#mainCarousel {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 100vw; /* Tamaño máximo opcional */
+    margin: auto; /* Centra el carrusel */
+}
+
+/* Ajusta las imágenes del carrusel */
+#mainCarousel .carousel-item img {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
 /* Base styles */
 body {
     margin: 0;
