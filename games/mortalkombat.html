@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,20 +14,25 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            min-height: 100vh; /* Ocupa toda la altura de la ventana */
+            min-height: 100vh;
+            /* Ocupa toda la altura de la ventana */
             margin: 0;
-            text-align: center; /* Centra el texto */
+            text-align: center;
+            /* Centra el texto */
         }
 
         iframe {
-            margin-top: 20px; /* Espaciado entre el iframe y otros elementos */
+            margin-top: 20px;
+            /* Espaciado entre el iframe y otros elementos */
         }
     </style>
 </head>
+
 <body>
-    
+
     <h1>Mortal Kombat 11</h1>
-    <p><strong>Mortal Kombat 11</strong> es un videojuego de lucha desarrollado por NetherRealm Studios y publicado por Warner Bros. Interactive Entertainment. Es la undécima entrega principal de la serie Mortal Kombat.</p>
+    <p><strong>Mortal Kombat 11</strong> es un videojuego de lucha desarrollado por NetherRealm Studios y publicado por
+        Warner Bros. Interactive Entertainment. Es la undécima entrega principal de la serie Mortal Kombat.</p>
 
     <h2>Características principales</h2>
     <ul>
@@ -47,7 +53,10 @@
     </ul>
 
     <h2>Tráiler oficial</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/W5nLxF-l_Bc?si=Mu61E1h9Hpa44jeH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/W5nLxF-l_Bc?si=Mu61E1h9Hpa44jeH"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <h2>Plataformas disponibles</h2>
     <p>Mortal Kombat 11 está disponible en:</p>
     <ul>
@@ -58,7 +67,82 @@
     </ul>
 
     <h2>Conclusión</h2>
-    <p>Si eres fanático de los juegos de lucha, <strong>Mortal Kombat 11</strong> es una experiencia que no te puedes perder. ¡Prepárate para intensas batallas y movimientos finales espectaculares!</p>
+    <p>Si eres fanático de los juegos de lucha, <strong>Mortal Kombat 11</strong> es una experiencia que no te puedes
+        perder. ¡Prepárate para intensas batallas y movimientos finales espectaculares!</p>
+
+    <h2>Inscripción de Participantes</h2>
+    <div class="form-container">
+        <form id="registrationForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" id="name" class="form-control" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="course" class="form-label">Curso</label>
+                <input type="text" id="course" class="form-control" placeholder="Ingresa tu curso" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Inscribir</button>
+        </form>
+    </div>
+
+    <h2>Lista de Participantes</h2>
+    <div class="participants-list">
+        <ul id="participants" class="list-group">
+            <!-- Los registros se agregarán aquí dinámicamente -->
+        </ul>
+    </div>
+
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const participantsList = document.getElementById('participants');
+
+        // Función para cargar los participantes desde localStorage
+        function loadParticipants() {
+            const participants = JSON.parse(localStorage.getItem('participants')) || [];
+            participants.forEach(participant => {
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.textContent = `Nombre: ${participant.name}, Curso: ${participant.course}`;
+                participantsList.appendChild(listItem);
+            });
+        }
+
+        // Función para guardar un participante en localStorage
+        function saveParticipant(name, course) {
+            const participants = JSON.parse(localStorage.getItem('participants')) || [];
+            participants.push({ name, course });
+            localStorage.setItem('participants', JSON.stringify(participants));
+        }
+
+        // Evento para manejar el envío del formulario
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita el envío del formulario
+
+            // Obtiene los valores de los campos
+            const name = document.getElementById('name').value;
+            const course = document.getElementById('course').value;
+
+            // Crea un nuevo elemento de lista
+            const listItem = document.createElement('li');
+            listItem.className = 'list-group-item';
+            listItem.textContent = `Nombre: ${name}, Curso: ${course}`;
+
+            // Agrega el elemento a la lista
+            participantsList.appendChild(listItem);
+
+            // Guarda el participante en localStorage
+            saveParticipant(name, course);
+
+            // Limpia los campos del formulario
+            form.reset();
+        });
+
+        // Carga los participantes al cargar la página
+        window.onload = loadParticipants;
+    </script>
+
 
 </body>
+
 </html>
