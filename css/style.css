@@ -269,7 +269,7 @@ a {
 }
 
 .game-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-18px);
 }
 
 .game-card img {
@@ -304,3 +304,46 @@ h1 {
 .card-title {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
 }
+
+/* Particles */
+
+.particle-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 999;
+  }
+
+  .particle {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00ffff, #6a0dad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation-name: floatAndSpin;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes floatAndSpin {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-200px) rotate(360deg);
+      opacity: 0;
+    }
+  }
