@@ -67,6 +67,12 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    background: var(--dark);
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    font-family: cursive;
+    font-size: 1.5rem;
 }
 
 .hero-section {
@@ -128,6 +134,8 @@ a {
     width: 90%;
     max-width: 800px;
     padding: 0 1rem;
+    font-family: cursive;
+    color: var(--text-light);
 }
 
 .overlay-bg {
@@ -212,6 +220,7 @@ a {
 
 .games-section {
     padding: 4rem 2rem;
+    font-family: cursive;
 }
 
 .game-img {
@@ -266,6 +275,7 @@ a {
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
+
 }
 
 .game-card:hover {
