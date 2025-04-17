@@ -269,7 +269,7 @@ a {
 }
 
 .game-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
 }
 
 .game-card img {
@@ -303,4 +303,10 @@ h1 {
 
 .card-title {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+.color:hover{
+    color: #42c16c;
+}
+.white:hover{
+    color: #ffffff;
 }
