@@ -14,9 +14,16 @@ body {
     line-height: 1.6;
     font-size: x-large;
 }
-#listadoAuspiciadores img{
-    height: 50px;
+.listadoAuspiciadores img{
+
+    height: 80px;
 }
+
+.auspiciadores-section {
+
+    margin-top: 200px;
+}
+
 
 .container {
     display: flex;
@@ -71,6 +78,17 @@ a {
     gap: 2rem;
     padding: 2rem;
 }
+
+
+
+.categorias-premios {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 2rem;
+}
+
+
 
 .hero-section {
     position: relative;
@@ -270,6 +288,42 @@ a {
     overflow: hidden;
     transition: transform 0.3s ease;
 }
+
+.awards-card {
+    background: var(--dark);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    max-width: 300px; 
+    margin: 1rem; 
+}
+
+.awards-card:hover {
+    transform: translateY(-10px); 
+}
+
+.awards-card img {
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+}
+
+.awards-card h3 {
+    padding: 1rem;
+    margin: 0;
+}
+
+.awards-card ul {
+    list-style: none;
+    padding: 0 1rem 1rem;
+    margin: 0;
+}
+
+.awards-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 
 .game-card:hover {
     transform: translateY(-18px);
