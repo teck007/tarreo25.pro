@@ -320,7 +320,13 @@ h1 {
     overflow: visible;
     z-index: 999;
   }
-
+  .premiosfoto img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    gap: 20px;
+    margin: 10px;
+  }
   .particle {
     position: absolute;
     font-size: 20px;
