@@ -380,7 +380,8 @@ h1 {
     font-size: 20px;
     font-weight: bold;
     background: linear-gradient(45deg, #00ffff, #6a0dad);
-    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
     opacity: 0;
     animation-name: floatAndSpin;
